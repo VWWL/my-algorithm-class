@@ -12,6 +12,7 @@
         <module>01-linear-search</module>
         <module>pojo</module>
         <module>generator</module>
+        <module>02-sorting-algorithm</module>
     </modules>
 
     <properties>

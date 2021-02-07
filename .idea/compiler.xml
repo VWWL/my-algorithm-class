@@ -10,6 +10,7 @@
         <module name="pojo" />
         <module name="generator" />
         <module name="01-linear-search" />
+        <module name="02-sorting-algorithm" />
       </profile>
     </annotationProcessing>
   </component>

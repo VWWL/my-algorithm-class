@@ -54,7 +54,7 @@ public class SelectionSort {
     }
 
     public static <T, R extends Comparable<R>> T[] sort(T[] arr) {
-        return sort(arr, "asc", o -> (R) o);
+        return sort(arr, ASC, o -> (R) o);
     }
 
     public static <T, R extends Comparable<R>> T[] sort(T[] arr, String sortMode) {
@@ -62,7 +62,7 @@ public class SelectionSort {
     }
 
     public static <T, R extends Comparable<R>> T[] sort(T[] arr, Function<T, R> function) {
-        return sort(arr, "asc", function);
+        return sort(arr, ASC, function);
     }
 
     private static <R extends Comparable<R>> Predicate<R> analyze(String sortMode) {

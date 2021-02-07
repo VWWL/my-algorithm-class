@@ -31,6 +31,7 @@ public class SelectionSortTest {
         Integer[] res2 = SelectionSort.sort(DATA1, "desc");
         Student[] res3 = SelectionSort.sort(DATA2, Student::getId);
         Student[] res4 = SelectionSort.sort(DATA2, "desc", Student::getId);
+        Student[] res5 = SelectionSort.sort(DATA2, Student::getName);
     }
 
 }

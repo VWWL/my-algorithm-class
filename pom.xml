@@ -10,6 +10,8 @@
     <version>1.0.0</version>
     <modules>
         <module>01-linear-search</module>
+        <module>pojo</module>
+        <module>generator</module>
     </modules>
 
     <properties>

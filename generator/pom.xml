@@ -9,18 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>01-linear-search</artifactId>
+    <artifactId>generator</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>com.wwl</groupId>
-            <artifactId>generator</artifactId>
+            <artifactId>pojo</artifactId>
             <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 

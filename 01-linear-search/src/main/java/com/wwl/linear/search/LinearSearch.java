@@ -14,7 +14,6 @@ public class LinearSearch {
 
     /**
      * 输入一个数组及想搜索的目标，输出其所在的索引值，若不存在则为-1
-     * target.equals(data[i])
      *
      * @param data      目标数组
      * @param target    匹配值
@@ -22,13 +21,15 @@ public class LinearSearch {
      * @return 索引
      */
     public static <T> int search(T[] data, T target, Predicate<T> predicate) {
-        for (int i = 0; i < data.length; i++) {
+        long start = System.nanoTime();
+        int length = data.length;
+        for (int i = 0; i < length; i++) {
             if (predicate.test(target, data[i])) {
-                log.info("---result is {}---", i);
+                log.info("---result is {},using {} nano times---", i,System.nanoTime() - start);
                 return i;
             }
         }
-        log.warn("---result is not found.---");
+        log.warn("---result is not found,using {} nano times---",System.nanoTime() - start);
         return -1;
     }
 

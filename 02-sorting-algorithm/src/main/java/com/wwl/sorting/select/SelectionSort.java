@@ -1,6 +1,7 @@
 package com.wwl.sorting.select;
 
-import com.wwl.sorting.Predicate;
+import com.wwl.helper.sort.Predicate;
+import com.wwl.helper.sort.SortingHelper;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.function.Function;
@@ -36,7 +37,8 @@ public class SelectionSort {
         }
         Predicate<R> predicate = analyze(sortMode);
         long start = System.nanoTime();
-        log.info("---起始数据为 {} , 排序方式为 {} ---", arr, sortMode);
+        log.info("---起始数据为 {}", (Object) arr);
+        log.info("排序方式为 {} ---", sortMode);
         int length = arr.length;
         for (int i = 0; i < length; i++) {
             int preIndex = i;
@@ -49,7 +51,9 @@ public class SelectionSort {
             arr[i] = arr[preIndex];
             arr[preIndex] = t;
         }
-        log.info("---排序完成，结果为 {} , 总耗时 {} nano seconds---", arr, System.nanoTime() - start);
+        SortingHelper.isSorted(arr, predicate, function);
+        log.info("---排序完成，结果为 {}", (Object) arr);
+        log.info("总耗时 {} nano seconds---", System.nanoTime() - start);
         return arr;
     }
 
@@ -66,6 +70,6 @@ public class SelectionSort {
     }
 
     private static <R extends Comparable<R>> Predicate<R> analyze(String sortMode) {
-        return "asc".equals(sortMode) ? (o1, o2) -> o1.compareTo(o2) > 0 : (o1, o2) -> o1.compareTo(o2) < 0;
+        return "asc".equals(sortMode) ? (o1, o2) -> o1.compareTo(o2) >= 0 : (o1, o2) -> o1.compareTo(o2) <= 0;
     }
 }

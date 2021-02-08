@@ -1,4 +1,4 @@
-package com.wwl.sorting;
+package com.wwl.helper.sort;
 
 /**
  * @author wangweili

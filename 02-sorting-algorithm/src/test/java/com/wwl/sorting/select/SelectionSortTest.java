@@ -1,5 +1,6 @@
 package com.wwl.sorting.select;
 
+import com.wwl.generator.RandomArrayGenerator;
 import com.wwl.linear.search.pojo.Student;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +22,17 @@ public class SelectionSortTest {
             new Student(1, "张三")
     };
 
+    private static final Integer TEN_MILLION = 10_000;
+
+    private static final Integer HUNDRED_MILLION = 100_000;
+
+    private static final Integer THOUSAND_MILLION = 1_000_000;
+
+    private static final Integer[] DATA3 = RandomArrayGenerator.generateRandomArray(HUNDRED_MILLION);
+
+    private static final Integer[] DATA4 = RandomArrayGenerator.generateRandomArray(TEN_MILLION);
+
+
     @Before
     public void setUp() {
     }
@@ -32,6 +44,9 @@ public class SelectionSortTest {
         Student[] res3 = SelectionSort.sort(DATA2, Student::getId);
         Student[] res4 = SelectionSort.sort(DATA2, "desc", Student::getId);
         Student[] res5 = SelectionSort.sort(DATA2, Student::getName);
+        Student[] res6 = SelectionSort.sort(DATA2);
+        Integer[] res7 = SelectionSort.sort(DATA3);
+        Integer[] res8 = SelectionSort.sort(DATA4);
     }
 
 }

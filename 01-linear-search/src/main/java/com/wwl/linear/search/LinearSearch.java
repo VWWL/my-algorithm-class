@@ -1,5 +1,6 @@
 package com.wwl.linear.search;
 
+import com.wwl.helper.linear.Predicate;
 import lombok.extern.slf4j.Slf4j;
 
 /**

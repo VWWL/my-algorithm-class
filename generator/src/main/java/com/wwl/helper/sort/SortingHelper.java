@@ -1,7 +1,6 @@
 package com.wwl.helper.sort;
 
-import com.wwl.helper.sort.Predicate;
-
+import java.util.Arrays;
 import java.util.function.Function;
 
 /**
@@ -18,7 +17,7 @@ public class SortingHelper {
         int length = arr.length;
         for (int i = 1; i < length; i++) {
             if (!predicate.test(function.apply(arr[i]), function.apply(arr[i - 1]))) {
-                throw new IllegalArgumentException("Sort not true!!!");
+                throw new IllegalArgumentException("Sort not true!!! your wrong sort is " + Arrays.toString(arr));
             }
         }
     }

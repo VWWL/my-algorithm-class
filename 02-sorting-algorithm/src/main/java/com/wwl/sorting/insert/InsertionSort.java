@@ -1,4 +1,4 @@
-package com.wwl.sorting.select;
+package com.wwl.sorting.insert;
 
 import com.wwl.helper.sort.Predicate;
 import com.wwl.helper.sort.SortingHelper;
@@ -7,32 +7,28 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.function.Function;
 
 /**
- * 选择排序法
+ * 插入排序法
  *
  * @author wangweili
  * @version 1.0
- * @date 2021/2/7 10:22 下午
+ * @date 2021/2/7 10:23 下午
  */
 @Slf4j
-public class SelectionSort {
-
-    private static final boolean SORT_MODE = false;
+public class InsertionSort {
 
     private static final String ASC = "asc";
 
     private static final String DESC = "desc";
 
-    private SelectionSort() {
+    private InsertionSort() {
     }
 
     /**
-     * 选择排序，每次寻找剩下的元素中最小的元素并与游标位交换
+     * 插入排序
      *
-     * @param arr      初始数
-     * @param function 比较器
-     * @param sortMode 排序方式 升序/降序
-     * @param <T>      数组中的元素类型
-     * @param <R>      比较类型
+     * @param arr 初始数
+     * @param <T> 数组中的元素类型
+     * @param <R> 比较类型
      * @return 排序好的数组
      */
     public static <T, R extends Comparable<R>> T[] sort(T[] arr, String sortMode, Function<T, R> function) {
@@ -44,29 +40,15 @@ public class SelectionSort {
         log.info("---起始数据为 {}", (Object) arr);
         log.info("排序方式为 {} ---", sortMode);
         int length = arr.length;
-        if (SORT_MODE) {
-            for (int i = 0; i < length; i++) {
-                int preIndex = i;
-                for (int j = i; j < length; j++) {
-                    if (predicate.test(function.apply(arr[preIndex]), function.apply(arr[j]))) {
-                        preIndex = j;
-                    }
+        for (int i = 0; i < length; i++) {
+            for (int j = i; j - 1 >= 0; j--) {
+                if (predicate.test(function.apply(arr[j - 1]), function.apply(arr[j]))) {
+                    T t = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = t;
+                } else {
+                    break;
                 }
-                T t = arr[i];
-                arr[i] = arr[preIndex];
-                arr[preIndex] = t;
-            }
-        } else {
-            for (int i = length - 1; i >= 0; i--) {
-                int preIndex = i;
-                for (int j = i; j >= 0; j--) {
-                    if (predicate.test(function.apply(arr[j]), function.apply(arr[preIndex]))) {
-                        preIndex = j;
-                    }
-                }
-                T t = arr[i];
-                arr[i] = arr[preIndex];
-                arr[preIndex] = t;
             }
         }
         SortingHelper.isSorted(arr, predicate, function);
@@ -90,4 +72,5 @@ public class SelectionSort {
     private static <R extends Comparable<R>> Predicate<R> analyze(String sortMode) {
         return "asc".equals(sortMode) ? (o1, o2) -> o1.compareTo(o2) >= 0 : (o1, o2) -> o1.compareTo(o2) <= 0;
     }
+
 }

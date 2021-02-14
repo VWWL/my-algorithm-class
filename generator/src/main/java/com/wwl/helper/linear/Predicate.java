@@ -1,4 +1,4 @@
-package com.wwl.linear.search;
+package com.wwl.helper.linear;
 
 /**
  * @author wangweili

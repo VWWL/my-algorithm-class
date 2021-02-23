@@ -13,8 +13,6 @@ A
 generator/pom.xml,a/6/a675b55f833aaa5146588b81edb1aa60e996e760
 <
 pojo/pom.xml,0/a/0acc6f6c7a486774f6ca5738cc174f44b28355f1
-|
-L02-sorting-algorithm/src/main/java/com/wwl/sorting/insert/InsertSorting.java,7/3/730a1c3407f9c7d3f8e16fbbc70da63ea8051b31
 L
 02-sorting-algorithm/pom.xml,5/a/5ab382b75489244bbf64d4284ec20dc32ccefdd8
 |
@@ -33,3 +31,7 @@ n
 >generator/src/main/java/com/wwl/helper/sort/SortingHelper.java,8/d/8d52627bbe622be99ee0c56eccf9cfd8018823dd
 j
 :generator/src/main/java/com/wwl/helper/sort/Predicate.java,9/a/9abe410825c4363e8ce38d9f237a9d3717e8b440
+€
+P02-sorting-algorithm/src/test/java/com/wwl/sorting/insert/InsertionSortTest.java,d/3/d34090a15c67dbc5b935aecc7b08a91f01fa1991
+|
+L02-sorting-algorithm/src/main/java/com/wwl/sorting/insert/InsertionSort.java,e/2/e2cfeafed982f109d1c894ab48b7d0406ba36bdc

@@ -41,15 +41,12 @@ public class InsertionSort {
         log.info("排序方式为 {} ---", sortMode);
         int length = arr.length;
         for (int i = 0; i < length; i++) {
-            for (int j = i; j - 1 >= 0; j--) {
-                if (predicate.test(function.apply(arr[j - 1]), function.apply(arr[j]))) {
-                    T t = arr[j];
-                    arr[j] = arr[j - 1];
-                    arr[j - 1] = t;
-                } else {
-                    break;
-                }
+            T t = arr[i];
+            int j;
+            for (j = i; j - 1 >= 0 && predicate.test(function.apply(arr[j - 1]), function.apply(t)); j--) {
+                arr[j] = arr[j - 1];
             }
+            arr[j] = t;
         }
         SortingHelper.isSorted(arr, predicate, function);
         log.info("---排序完成，结果为 {}", (Object) arr);

@@ -13,6 +13,7 @@
         <module>pojo</module>
         <module>generator</module>
         <module>02-sorting-algorithm</module>
+        <module>03-array</module>
     </modules>
 
     <properties>
